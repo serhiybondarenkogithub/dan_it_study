@@ -25,3 +25,61 @@
  * відкривати модальне вікно signUpModal
  *
  */
+
+class Modal {
+    constructor(id, text, classList) {
+        this.id = id;
+        this.text = text;
+        this.classList= classList;
+        
+        this.modal = null;
+    }
+
+    render() {
+        const modal = document.createElement("div");
+        modal.className = this.classList;
+        document.body.append(modal);
+
+        const modalContent = document.createElement("div");
+        modalContent.className = "modal-content";
+        modalContent.innerHTML = this.text;
+        modal.append(modalContent);
+
+        const closeButton = document.createElement("div");
+        closeButton.className = "close";
+        closeButton.innerHTML = "x";
+        modal.append(closeButton);
+        this.modal = modal;
+    }
+
+    open() {
+        this.modal.className = "modal.active";
+        this.modal.querySelector(".close").addEventListener("click", this.close.bind(this));
+    }
+    close() {
+        this.modal.className = "modal";
+        this.modal.querySelector(".close").removeEventListener("click", this.close.bind(this));
+
+    }
+}
+
+const loginModal = new Modal(
+    "login-modal", 
+    "Ви успішно увійшли", 
+    "modal login-modal"
+);
+
+const signUpModal = new Modal(
+    "sign-up-modal", 
+    "Реєстрація", 
+    "modal sign-up-modal"
+);
+
+loginModal.render();
+signUpModal.render();
+
+document.querySelector("#login-btn")
+    .addEventListener("click", loginModal.open.bind(loginModal));
+
+document.querySelector("#sign-up-btn")
+    .addEventListener("click", signUpModal.open.bind(signUpModal));
