@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tooltip-container">
+        <div class="btn-container">
+            <p>Показувати тултіп <b>зверху при наведенні</b> з текстом <code>It's first button</code></p>
+            <button id="btn-1">Button 1</button>
+        </div>
+
+        <div class="btn-container">
+            <p>Показувати тултіп <b>справа при наведенні</b> з текстом <code>It's second button</code></p>
+            <button class="btn" id="btn-2">Button 2</button>
+        </div>
+
+        <div class="btn-container">
+            <p>Показувати тултіп <b>знизу при наведенні</b> з текстом <code>It's third button</code></p>
+            <button class="btn" id="btn-3">Button 3</button>
+        </div>
+
+        <div class="btn-container">
+            <p>Показувати тултіп <b>зліва при кліці</b> з текстом <code>It's fourth button</code></p>
+            <button class="btn" id="btn-4">Button 4</button>
+        </div>
+
+        <!-- ADVANCED -->
+        <div class="btn-container">
+            <p>Показувати тултіп <b>знизу при фокусі</b> з текстом <code>It's input tooltip</code></p>
+            <div id="input" class="input-block">
+                <input type="text">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button id="show-first">Show first</button>
+        <button id="hide-first">Hide first</button>
+        <button id="disable-third">Disable third tooltip</button>
+        <button id="enable-third">Enable third tooltip</button>
+        <button id="disable-all">Disable all</button>
+        <button id="enable-all">Enable all</button>
+    </div>
+
+    <div class="controls">Змінити текст тултіпу другої кнопки на <input id="text-input" type="text"><button id="apply-text">Застосувати</button></div>
+    
+    <div class="controls">Змінити позиціонування тултіпу останньої кнопки на <input id="align-input" type="text"><button id="apply-align">Застосувати</button></div>
+    <script src="./script.js"></script>
+</body>
+</html>
